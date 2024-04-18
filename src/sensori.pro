@@ -9,9 +9,15 @@ CONFIG += console
 
 # Input
 HEADERS += \
+        model/sensor/AbstractSensor.h \
+        model/sensor/QuantitySensor.h \
+        model/sensor/EventSensor.h \
 
 SOURCES += \
         main.cpp \
+        model/sensor/AbstractSensor.cpp \
+        model/sensor/QuantitySensor.cpp \
+        model/sensor/EventSensor.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree

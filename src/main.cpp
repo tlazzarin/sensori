@@ -1,11 +1,13 @@
 #include <QApplication>
-#include <QPushButton>
 #include <QDebug>
+#include "lib/QtAwesome/QtAwesome.h"
+#include "model/sensor/QuantitySensor.h"
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    QPushButton button("Hello world !");
-    button.show();
+    fa::QtAwesome* awesome = new fa::QtAwesome();
+    awesome->initFontAwesome();
+
     return app.exec();
 }
