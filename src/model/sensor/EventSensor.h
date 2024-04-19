@@ -1,5 +1,6 @@
 #ifndef MODEL_SENSOR_EVENTSENSOR_H
 #define MODEL_SENSOR_EVENTSENSOR_H
+#include <QList>
 #include "AbstractSensor.h"
 namespace model
 {
@@ -7,11 +8,14 @@ namespace model
     {
         class EventSensor : public AbstractSensor
         {
-            private:
-            
+        private:
+            QList<int> data;
+
         public:
-            explicit EventSensor(QString id, QString name);
+            explicit EventSensor(QString name); //sensore nuovo
+            explicit EventSensor(QString name,quint32 id); //sensore importato dal json
             void simulate() override;
+            QList<int> getData() const;
         };
     }
 }

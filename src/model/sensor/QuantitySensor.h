@@ -11,7 +11,8 @@ namespace model
             private:
                 int val;//[1,100]
             public:
-                explicit QuantitySensor(QString id, QString name, int value=0);
+                explicit QuantitySensor(QString name); //per creazione da zero
+                explicit QuantitySensor(QString name,quint32 id); //per import da json
                 void simulate() override;
                 int getVal() const;
                 void setVal(int val);

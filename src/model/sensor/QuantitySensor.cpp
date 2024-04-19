@@ -1,10 +1,10 @@
 #include "QuantitySensor.h"
-#include <QRandomGenerator>
 namespace model
 {
     namespace sensor
     {
-        QuantitySensor::QuantitySensor(QString id, QString name, int value) : AbstractSensor(id, name), val(value) {}
+        QuantitySensor::QuantitySensor(QString name) : AbstractSensor(name), val(0) {}
+        QuantitySensor::QuantitySensor(QString name,quint32 id) : AbstractSensor(name,id), val(0) {}
         void QuantitySensor::simulate() {
             val=QRandomGenerator::global()->bounded(0,101);
         }
