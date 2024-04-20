@@ -14,6 +14,7 @@ HEADERS += \
         model/sensor/EventSensor.h \
         model/sensor/XYSensor.h \
         model/database/DB.h \
+        view/MainWindow.h \
 
 SOURCES += \
         main.cpp \
@@ -21,7 +22,8 @@ SOURCES += \
         model/sensor/QuantitySensor.cpp \
         model/sensor/EventSensor.cpp \
         model/sensor/XYSensor.cpp \
-        model/database/DB.cpp
+        model/database/DB.cpp \
+        view/MainWindow.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree

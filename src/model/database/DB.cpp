@@ -31,9 +31,20 @@ namespace model
                     break;
                 }
             }
+            return nullptr;
         }
         QList<AbstractSensor*> DB::search(QString query) const{
+            //Se l'utente non ha fatto alcuna ricerca ritorna tutti i sensori
             if(query=="") return sensors;
+            QList<AbstractSensor*> out;
+            //Controllo se in ogni id e nome del sensore è presente il contenuto della query
+            for (auto sensor:sensors)
+            {
+                if(QString::number(sensor->getId()).contains(query) || sensor->getName().contains(query)){
+                    out.append(sensor);
+                }
+            }
+            return out;
         }
     }
 }
