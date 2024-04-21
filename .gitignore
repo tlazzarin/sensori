@@ -54,6 +54,6 @@ compile_commands.json
 *_qmlcache.qrc
 
 # Custom
-.vscode
-debug/
-release/
+.vscode/
+src/debug/
+src/release/
