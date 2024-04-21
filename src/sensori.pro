@@ -15,6 +15,7 @@ HEADERS += \
         model/sensor/XYSensor.h \
         model/database/DB.h \
         view/MainWindow.h \
+        view/NewSensorWizard.h \
 
 SOURCES += \
         main.cpp \
@@ -24,8 +25,9 @@ SOURCES += \
         model/sensor/XYSensor.cpp \
         model/database/DB.cpp \
         view/MainWindow.cpp \
+        view/NewSensorWizard.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree
 include(lib/QtAwesome/QtAwesome.pri)
-RC_ICONS = assets/chart-line-solid.ico
+RC_ICONS = assets/chart-area-solid.ico
