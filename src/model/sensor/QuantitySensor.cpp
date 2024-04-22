@@ -8,7 +8,7 @@ namespace model
         void QuantitySensor::simulate() {
             val=QRandomGenerator::global()->bounded(0,101);
         }
-        int QuantitySensor::getVal() const { return val; }
+        const int& QuantitySensor::getVal() const { return val; }
         void QuantitySensor::setVal(int val) {
             if (val < 1 || val > 100)
                 val=0;

@@ -13,8 +13,8 @@ namespace model{
                 explicit XYSensor(QString name); //sensore nuovo
                 explicit XYSensor(QString name,quint32 id); //sensore importato dal json
                 void simulate() override;
-                QList<float> getX() const;
-                QList<float> getY() const;
+                const QList<float>& getX() const;
+                const QList<float>& getY() const;
         };
     }
 }

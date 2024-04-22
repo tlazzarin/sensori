@@ -16,7 +16,7 @@ namespace model{
                 y.append(QRandomGenerator::global()->generateDouble());
             }
         }
-        QList<float> XYSensor::getX() const { return x; }
-        QList<float> XYSensor::getY() const { return y; }
+        const QList<float>& XYSensor::getX() const { return x; }
+        const QList<float>& XYSensor::getY() const { return y; }
     }
 }

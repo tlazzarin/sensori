@@ -17,8 +17,8 @@ namespace model
             explicit AbstractSensor(QString name); //sensore nuovo
             explicit AbstractSensor(QString name,quint32 id); //sensore importato dal json
         public:
-            quint32 getId() const;
-            QString getName() const;
+            const quint32& getId() const;
+            const QString& getName() const;
             void setName(const QString name);
             virtual ~AbstractSensor() = default;
             virtual void simulate() = 0;

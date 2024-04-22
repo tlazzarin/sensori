@@ -14,7 +14,7 @@ namespace model
                 explicit QuantitySensor(QString name); //per creazione da zero
                 explicit QuantitySensor(QString name,quint32 id); //per import da json
                 void simulate() override;
-                int getVal() const;
+                const int& getVal() const;
                 void setVal(int val);
         };
     }

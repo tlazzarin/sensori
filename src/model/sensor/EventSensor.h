@@ -15,7 +15,7 @@ namespace model
             explicit EventSensor(QString name); //sensore nuovo
             explicit EventSensor(QString name,quint32 id); //sensore importato dal json
             void simulate() override;
-            QList<int> getData() const;
+            const QList<int>& getData() const;
         };
     }
 }

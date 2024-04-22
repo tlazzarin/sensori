@@ -9,6 +9,6 @@ namespace model{
             for (int i = 0; i < 7; i++)
                 data[i] = QRandomGenerator::global()->bounded(0, 11);
         }
-        QList<int> EventSensor::getData() const { return data; }
+        const QList<int>& EventSensor::getData() const { return data; }
     }
 }

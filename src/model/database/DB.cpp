@@ -33,7 +33,7 @@ namespace model
             }
             return nullptr;
         }
-        QList<AbstractSensor*> DB::search(QString query) const{
+        const QList<AbstractSensor*>& DB::search(QString query) const{
             //Se l'utente non ha fatto alcuna ricerca ritorna tutti i sensori
             if(query=="") return sensors;
             QList<AbstractSensor*> out;
