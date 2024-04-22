@@ -19,7 +19,7 @@ namespace model
         public:
             const quint32& getId() const;
             const QString& getName() const;
-            void setName(const QString name);
+            void setName(const QString& name);
             virtual ~AbstractSensor() = default;
             virtual void simulate() = 0;
         };

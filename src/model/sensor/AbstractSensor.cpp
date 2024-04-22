@@ -9,6 +9,6 @@ namespace model
         AbstractSensor::AbstractSensor(QString name) : id(QRandomGenerator::global()->bounded(1000000,9999999)),name(name) {}
         const quint32& AbstractSensor::getId() const { return id; }
         const QString& AbstractSensor::getName() const { return name; }
-        void AbstractSensor::setName(const QString name) { this->name = name; }
+        void AbstractSensor::setName(const QString& name) { this->name = name; }
     }
 }

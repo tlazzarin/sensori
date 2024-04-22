@@ -6,6 +6,7 @@ namespace view{
     MainWindow::MainWindow(QtAwesome* qta, DB* mainRepo, QWidget* parent): QMainWindow(parent), awesome(qta), repo(mainRepo){
         setWindowIcon(awesome->icon("fa-solid fa-chart-area"));
         wizard = new NewSensorWizard(awesome);
+        setMinimumSize(900,600);
         //* Inizializzazione menù a tendina
         QAction* newSensor = new QAction(awesome->icon("fa-solid fa-plus"), "Add New Sensor");
         QAction* importSensors = new QAction(awesome->icon("fa-solid fa-file-arrow-down"), "Import Sensors");
@@ -18,7 +19,12 @@ namespace view{
         menu->addAction(exportSensors);
         menu->addSeparator();
         menu->addAction(close);
-
+        //* Inizializzazione MainWidget
+        splitter=new QSplitter();
+        setCentralWidget(splitter);
+        browser=new BrowserWidget(awesome,repo,this);
+        browser->setMinimumWidth(300);
+        splitter->addWidget(browser);
         //!CONNECTS
         connect(close, &QAction::triggered, this, &MainWindow::close); //chiude l'applicazione
         connect(newSensor, &QAction::triggered, wizard, &NewSensorWizard::createNewSensor);

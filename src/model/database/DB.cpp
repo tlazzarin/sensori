@@ -8,7 +8,7 @@ namespace model
         {
             sensors.append(new_sensor);
         }
-        void DB::remove(quint32 key)
+        void DB::remove(const quint32& key)
         {
             AbstractSensor *sensor;
             for (int i = 0; i < sensors.size(); i++)
@@ -22,7 +22,7 @@ namespace model
                 }
             }
         }
-        AbstractSensor* DB::get(quint32 key) const{
+        AbstractSensor* DB::get(const quint32& key) const{
             for (int i = 0; i < sensors.size(); i++)
             {
                 if (sensors.at(i)->getId() == key)
@@ -33,7 +33,7 @@ namespace model
             }
             return nullptr;
         }
-        const QList<AbstractSensor*>& DB::search(QString query) const{
+        QList<AbstractSensor*> DB::search(const QString& query) const{
             //Se l'utente non ha fatto alcuna ricerca ritorna tutti i sensori
             if(query=="") return sensors;
             QList<AbstractSensor*> out;

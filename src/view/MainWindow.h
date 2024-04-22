@@ -3,6 +3,7 @@
 //Qt
 #include <QMainWindow>
 #include <QSplitter>
+#include <QHBoxLayout>
 //Librerie
 #include "lib/QtAwesome/QtAwesome.h"
 //Model
@@ -12,6 +13,7 @@
 #include "model/sensor/XYSensor.h"
 //View
 #include "NewSensorWizard.h"
+#include "BrowserWidget.h"
 using namespace model::database;
 using namespace fa;
 namespace view{
@@ -25,6 +27,7 @@ namespace view{
             DB* repo;
             //View
             NewSensorWizard* wizard;
+            BrowserWidget* browser;
         public:
             explicit MainWindow(QtAwesome* qta, DB* mainRepo, QWidget* parent=0);
         public slots:

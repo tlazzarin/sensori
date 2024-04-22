@@ -16,6 +16,9 @@ HEADERS += \
         model/database/DB.h \
         view/MainWindow.h \
         view/NewSensorWizard.h \
+        view/BrowserWidget.h \
+        view/SensorCardWidget.h \
+        view/SensorsListWidget.h \
 
 SOURCES += \
         main.cpp \
@@ -26,6 +29,9 @@ SOURCES += \
         model/database/DB.cpp \
         view/MainWindow.cpp \
         view/NewSensorWizard.cpp \
+        view/BrowserWidget.cpp \
+        view/SensorCardWidget.cpp \
+        view/SensorsListWidget.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree

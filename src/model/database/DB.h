@@ -9,10 +9,10 @@ namespace model{
             private:
                 QList<AbstractSensor*> sensors;
             public:
-                const QList<AbstractSensor*>& search(QString query) const;
+                QList<AbstractSensor*> search(const QString& query) const;
                 void insert(AbstractSensor* new_sensor);
-                void remove(quint32 key); //cancellazione deep del sensore
-                AbstractSensor* get(quint32 key) const; //se non lo trova ritorna nullptr, non ritorna un const AbstractSensor& perché dovrà farci le simulazioni che vanno a modificare l'oggetto
+                void remove(const quint32& key); //cancellazione deep del sensore
+                AbstractSensor* get(const quint32& key) const; //se non lo trova ritorna nullptr, non ritorna un const AbstractSensor& perché dovrà farci le simulazioni che vanno a modificare l'oggetto
         };
     }
 }
