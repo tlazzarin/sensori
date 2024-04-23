@@ -17,10 +17,10 @@ namespace view{
             //Model
             DB* repo;
             //View
-            QList<SensorCardWidget*> cardList;
+            QList<SensorCardWidget*> cardsList;
         public:
             explicit SensorsListWidget(DB* db,QWidget* parent=0);
-            void generateView(const QString& query); //Ogni volta che l'utente cambia un carattere nella ricerca ricreo la view
+            void generateView(const QString& query); //Ogni volta che l'utente cambia un carattere nella ricerca o carica un json ricreo la view
     };
 }
 #endif

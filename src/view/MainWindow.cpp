@@ -22,7 +22,7 @@ namespace view{
         //* Inizializzazione MainWidget
         splitter=new QSplitter();
         setCentralWidget(splitter);
-        browser=new BrowserWidget(awesome,repo,this);
+        browser=new BrowserWidget(awesome, repo, this);
         browser->setMinimumWidth(300);
         splitter->addWidget(browser);
         //!CONNECTS
@@ -46,5 +46,6 @@ namespace view{
         default:
             break;
         }
+        browser->refreshList();
     }
 }

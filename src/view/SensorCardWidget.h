@@ -12,11 +12,11 @@ namespace view{
         Q_OBJECT
         private:
             QHBoxLayout* layout;
-            AbstractSensor* s;
-            QLabel* id;
+            quint32 id;
             QLabel* name;
         public:
             explicit SensorCardWidget(AbstractSensor* sens, QWidget* parent=0);
+            const quint32& getId() const;
     };
 }
 #endif

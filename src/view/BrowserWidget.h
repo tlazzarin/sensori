@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLineEdit>
 #include <QVBoxLayout>
+#include <QScrollArea>
 //Librerie
 #include "lib/QtAwesome/QtAwesome.h"
 //Model
@@ -18,6 +19,7 @@ namespace view{
         private:
             //Layout
             QVBoxLayout* layout;
+            QScrollArea* scrollArea;
             //Lib/model
             QtAwesome* awesome;
             DB* repo;
@@ -30,7 +32,7 @@ namespace view{
         signals:
             void sensorSelectedChanged(); //Comunica al viewer quale sensore visualizzare
         public slots:
-            //void refreshDb(); //Da chiamare ogni volta che c'è un cambio al DB (import da json, aggiunta, rimozione, modifica)
+            void refreshList(); //Da chiamare ogni volta che c'è un cambio al DB (import da json, aggiunta, rimozione, modifica) o cambia la ricerca
     };
 }
 #endif
