@@ -5,7 +5,7 @@
 \begin{titlepage}
     \centering
     \includegraphics{img/universita-degli-studi-di-padova.eps}
-    {\huge\bfseries Realizzazione di Sans, un simulatore di sensori\par}
+    {\huge\bfseries Realizzazione di un simulatore di sensori\par}
     \vspace{0.5cm}
 	{\scshape\Large Corso di programmazione a oggetti\par}
 	\vspace{1.5cm}
@@ -20,30 +20,28 @@
 \clearpage
 \section{Introduzione}
 \subsection{Sintesi del programma}
-Sans è un programma scritto in C++ che implementa il framework Qt per presentare le informazioni all'utente attraverso un'interfaccia grafica. Il suo compito è gestire, simulare, importare ed esportare sensori.
+Sensori è un programma scritto in C++ e implementa il framework Qt per presentare le informazioni all'utente attraverso un'interfaccia grafica. Il suo compito è gestire, simulare, importare ed esportare sensori.
 Il programma ne mette a disposizione tre tipi: quelli che rilevano un valore e la sua variazione nel tempo, quelli che rilevano una quantità e quelli che rilevano un evento.
-Questa scelta è stata fatta in modo tale da utilizzare due tipi di grafici e una barra del progresso: 
+Questa scelta è stata fatta in modo tale da utilizzare vari tipi di grafici: 
 \begin{itemize}
     \item Un grafico lineare per rappresentare i valori nel tempo;
     \item Un grafico a barre che rappresenta il numero di occorrenze di un evento in un periodo;
     \item Una barra del progresso che rappresenta una percentuale.
 \end{itemize}
-La selezione di questo tipo di sensori permette di avere una gerarchia di classi in cui le sottoclassi riutilizza le strutture dati già messe a disposizione dalla sua superclasse in maniera efficace.
-Un altro punto fondamentale di questo progetto è il supporto alla persistenza dei dati, questo è ottenuto attraverso l'uso di JSON, un formato strutturato.
+Questo progetto offre il supporto persistenza dei dati tramite l'uso di un formato strutturato chiamato JSON.
 \subsection{Funzioni implementate}
-Per la gestione dei singoli sensori:
+Per la gestione di un singolo sensore:
 \begin{itemize}
-    \item Creazione
-    \item Modifica
-    \item Simulazione
-    \item Cancellazione
-    \item Importazione ed esportazione attraverso un file JSON
+    \item Creazione;
+    \item Modifica;
+    \item Simulazione;
+    \item Cancellazione.
 \end{itemize}
 Per la gestione dell'insieme di sensori:
 \begin{itemize}
-    \item Barra di ricerca
-    \item Importazione ed esportazione di un intero insieme di sensori attraverso un file JSON
-    \item Ordinamento secondo la data di aggiunta o l'ordine alfabetico
+    \item Barra di ricerca per filtrare i sensori attraverso il nome o l'ID;
+    \item Importazione ed esportazione di un intero insieme di sensori attraverso un file JSON;
+    \item Ordinamento secondo la data di aggiunta o l'ordine alfabetico;
 \end{itemize}
 \clearpage
 \section{Implementazione}
