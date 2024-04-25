@@ -18,8 +18,20 @@ namespace view{
         //setStyleSheet("background-color: blue;");
         //!CONNECT
         connect(searchBox, &QLineEdit::textChanged, this, &BrowserWidget::refreshList);
+        connect(sensorsList, &SensorsListWidget::newSensorSelectedToBrowser, this, &BrowserWidget::sensorSelectedChangedFromList);
     }
     void BrowserWidget::refreshList(){
         sensorsList->generateView(searchBox->text());
+    }
+
+    const quint32& BrowserWidget::getSelectedSensorId() const{
+        return sensorsList->getSelectedSensorId();
+    }
+    void BrowserWidget::setSelectedSensorId(const quint32& selected){
+        sensorsList->setSelectedSensorId(selected);
+    }
+
+    void BrowserWidget::sensorSelectedChangedFromList(){
+        emit sensorSelectedChangedToMain();
     }
 }

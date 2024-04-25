@@ -46,5 +46,9 @@ namespace model
             }
             return out;
         }
+
+        quint32 DB::getLastSensorId() const{
+            return sensors.last()->getId();
+        }
     }
 }

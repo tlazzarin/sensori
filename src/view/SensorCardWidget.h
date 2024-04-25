@@ -14,9 +14,13 @@ namespace view{
             QHBoxLayout* layout;
             quint32 id;
             QLabel* name;
+        protected:
+            void mousePressEvent(QMouseEvent* event);
         public:
-            explicit SensorCardWidget(AbstractSensor* sens, QWidget* parent=0);
+            explicit SensorCardWidget(AbstractSensor* sens, bool selected, QWidget* parent=0);
             const quint32& getId() const;
+        signals:
+            void clicked();
     };
 }
 #endif

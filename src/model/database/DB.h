@@ -13,6 +13,7 @@ namespace model{
                 void insert(AbstractSensor* new_sensor);
                 void remove(const quint32& key); //cancellazione deep del sensore
                 AbstractSensor* get(const quint32& key) const; //se non lo trova ritorna nullptr, non ritorna un const AbstractSensor& perché dovrà farci le simulazioni che vanno a modificare l'oggetto
+                quint32 getLastSensorId() const;
         };
     }
 }

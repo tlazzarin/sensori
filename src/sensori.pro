@@ -36,4 +36,4 @@ SOURCES += \
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree
 include(lib/QtAwesome/QtAwesome.pri)
-RC_ICONS = assets/chart-area-solid.ico
+RC_ICONS = assets/chart-line-solid.ico

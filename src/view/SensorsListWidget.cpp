@@ -7,14 +7,32 @@ namespace view{
     }
 
     void SensorsListWidget::generateView(const QString& query){
+        this->query=query;
         qDeleteAll(findChildren<SensorCardWidget*>());
         cardsList.clear();
         QList<AbstractSensor*> queryResult=repo->search(query);
         SensorCardWidget* temp=nullptr;
         for(auto sensor : queryResult){
-            temp=new SensorCardWidget(sensor,this);
+            temp=new SensorCardWidget(sensor,sensor->getId()==selectedSensorId?true:false, this);
             cardsList.append(temp);
             layout->insertWidget(layout->count()-1,temp);
+            connect(temp, &SensorCardWidget::clicked, this, &SensorsListWidget::clickEvent);
         }
+    }
+
+    void SensorsListWidget::clickEvent(){
+        SensorCardWidget* obj=qobject_cast<SensorCardWidget*>(sender());
+        selectedSensorId=obj->getId();
+        generateView(query);
+        emit newSensorSelectedToBrowser();
+    }
+
+    void SensorsListWidget::setSelectedSensorId(const quint32& selected){
+        selectedSensorId=selected;
+        generateView(query);
+    }
+
+    const quint32& SensorsListWidget::getSelectedSensorId() const{
+        return selectedSensorId;
     }
 }
