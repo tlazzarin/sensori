@@ -14,8 +14,10 @@
 //View
 #include "NewSensorWizard.h"
 #include "BrowserWidget.h"
+#include "view/sensorViewer/SensorInspectorWidget.h"
 using namespace model::database;
 using namespace fa;
+using namespace view::sensorViewer;
 namespace view{
     class MainWindow : public QMainWindow{
         Q_OBJECT
@@ -28,6 +30,7 @@ namespace view{
             //View
             NewSensorWizard* wizard;
             BrowserWidget* browser;
+            SensorInspectorWidget* inspector;
         public:
             explicit MainWindow(QtAwesome* qta, DB* mainRepo, QWidget* parent=0);
         public slots:

@@ -25,6 +25,8 @@ namespace view{
         browser=new BrowserWidget(awesome, repo, this);
         browser->setMinimumWidth(300);
         splitter->addWidget(browser);
+        inspector=new SensorInspectorWidget(awesome, repo,this);
+        splitter->addWidget(inspector);
         //!CONNECTS
         connect(close, &QAction::triggered, this, &MainWindow::close); //chiude l'applicazione
         connect(newSensor, &QAction::triggered, wizard, &NewSensorWizard::createNewSensor);

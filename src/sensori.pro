@@ -19,6 +19,8 @@ HEADERS += \
         view/BrowserWidget.h \
         view/SensorCardWidget.h \
         view/SensorsListWidget.h \
+        view/sensorViewer/SensorInspectorWidget.h \
+        view/sensorViewer/SensorControlWidget.h \
 
 SOURCES += \
         main.cpp \
@@ -32,6 +34,8 @@ SOURCES += \
         view/BrowserWidget.cpp \
         view/SensorCardWidget.cpp \
         view/SensorsListWidget.cpp \
+        view/sensorViewer/SensorInspectorWidget.cpp \
+        view/sensorViewer/SensorControlWidget.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree
