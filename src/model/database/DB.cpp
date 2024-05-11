@@ -8,7 +8,7 @@ namespace model
         {
             sensors.append(new_sensor);
         }
-        void DB::remove(const quint32& key)
+        void DB::remove(const unsigned int key)
         {
             AbstractSensor *sensor;
             for (int i = 0; i < sensors.size(); i++)
@@ -22,7 +22,7 @@ namespace model
                 }
             }
         }
-        AbstractSensor* DB::get(const quint32& key) const{
+        AbstractSensor* DB::get(const unsigned int key) const{
             for (int i = 0; i < sensors.size(); i++)
             {
                 if (sensors.at(i)->getId() == key)
@@ -47,7 +47,7 @@ namespace model
             return out;
         }
 
-        quint32 DB::getLastSensorId() const{
+        unsigned int DB::getLastSensorId() const{
             return sensors.last()->getId();
         }
     }

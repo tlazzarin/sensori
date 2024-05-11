@@ -57,5 +57,6 @@ namespace view{
     void MainWindow::sensorSelectedChanged(){
         qDebug()<<"Hai cliccato "<<browser->getSelectedSensorId();
         inspector->setSensor(repo->get(browser->getSelectedSensorId()));
+        inspector->generateGraph();
     }
 }

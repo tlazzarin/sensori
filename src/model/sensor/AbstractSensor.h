@@ -1,8 +1,6 @@
 #ifndef MODEL_SENSOR_ABSTRACTSENSOR_H
 #define MODEL_SENSOR_ABSTRACTSENSOR_H
 #include <QString>
-#include <QtTypes>
-#include <QRandomGenerator>
 #include "SensorVisitorInterface.h"
 namespace model
 {
@@ -11,14 +9,14 @@ namespace model
         class AbstractSensor
         {
         private:
-            quint32 id; //genera un intero di 32-bit senza segno https://doc.qt.io/qt-6/qttypes.html#quint32-typedef
+            unsigned int id; //genera un intero di 32-bit senza segno https://doc.qt.io/qt-6/qttypes.html#unsigned int-typedef
             QString name;
 
         protected:
             explicit AbstractSensor(QString name); //sensore nuovo
-            explicit AbstractSensor(QString name,quint32 id); //sensore importato dal json
+            explicit AbstractSensor(QString name,unsigned int id); //sensore importato dal json
         public:
-            const quint32& getId() const;
+            const unsigned int getId() const;
             const QString& getName() const;
             void setName(const QString& name);
             virtual ~AbstractSensor() = default;

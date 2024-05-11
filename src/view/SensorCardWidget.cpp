@@ -14,7 +14,7 @@ namespace view{
             setStyleSheet("background-color: #e7e7e7;");
         setFixedHeight(80);
     }
-    const quint32& SensorCardWidget::getId() const{
+    const unsigned int SensorCardWidget::getId() const{
         return id;
     }
 

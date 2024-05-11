@@ -1,13 +1,13 @@
 #include "AbstractSensor.h"
-#include <QRandomGenerator>
+#include <cstdlib>
 namespace model
 {
     namespace sensor
     {
         //https://doc.qt.io/qt-6/qrandomgenerator.html#generate
-        AbstractSensor::AbstractSensor(QString name,quint32 id) : id(id),name(name) {}
-        AbstractSensor::AbstractSensor(QString name) : id(QRandomGenerator::global()->bounded(1000000,9999999)),name(name) {}
-        const quint32& AbstractSensor::getId() const { return id; }
+        AbstractSensor::AbstractSensor(QString name,unsigned int id) : id(id),name(name) {}
+        AbstractSensor::AbstractSensor(QString name) : id(rand()%10000000),name(name) {}
+        const unsigned int AbstractSensor::getId() const { return id; }
         const QString& AbstractSensor::getName() const { return name; }
         void AbstractSensor::setName(const QString& name) { this->name = name; }
     }

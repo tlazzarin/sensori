@@ -28,8 +28,8 @@ namespace view{
             SensorsListWidget* sensorsList;
         public:
             explicit BrowserWidget(QtAwesome* qta, DB* mainRepo, QWidget* parent=0);
-            const quint32& getSelectedSensorId() const;
-            void setSelectedSensorId(const quint32& selected); //Quando aggiungo un sensore nuovo lo seleziono
+            const unsigned int getSelectedSensorId() const;
+            void setSelectedSensorId(const unsigned int selected); //Quando aggiungo un sensore nuovo lo seleziono
         signals:
             void sensorSelectedChangedToMain(); //Comunica al viewer quale sensore visualizzare
         public slots:

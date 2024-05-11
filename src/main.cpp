@@ -3,8 +3,6 @@
 #include "lib/QtAwesome/QtAwesome.h"
 #include "model/database/DB.h"
 #include "view/MainWindow.h"
-#include "model/sensor/QuantitySensor.h"//TODO: DA TOGLIERE
-#include "model/sensor/XYSensor.h" //TODO: DA TOGLIERE
 
 using namespace model::sensor;
 using namespace view;

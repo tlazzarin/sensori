@@ -27,12 +27,12 @@ namespace view{
         emit newSensorSelectedToBrowser();
     }
 
-    void SensorsListWidget::setSelectedSensorId(const quint32& selected){
+    void SensorsListWidget::setSelectedSensorId(const unsigned int selected){
         selectedSensorId=selected;
         generateView(query);
     }
 
-    const quint32& SensorsListWidget::getSelectedSensorId() const{
+    const unsigned int SensorsListWidget::getSelectedSensorId() const{
         return selectedSensorId;
     }
 }
