@@ -12,6 +12,10 @@ namespace view{
             deleteButton=new QPushButton(awesome->icon("fa-solid fa-trash"),"Delete",this);
             deleteButton->setMinimumHeight(50);
             layout->addWidget(deleteButton);
+            //! CONNECT
+            connect(simulateButton, &QPushButton::clicked, this, &SensorControlWidget::simulateButtonPressed);
+            connect(editButton, &QPushButton::clicked, this, &SensorControlWidget::editButtonPressed);
+            connect(deleteButton, &QPushButton::clicked, this, &SensorControlWidget::deleteButtonPressed);
         }
     }
 }

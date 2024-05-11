@@ -6,8 +6,7 @@ namespace model
 {
     namespace sensor
     {
-        class EventSensor : public AbstractSensor
-        {
+        class EventSensor : public AbstractSensor{
         private:
             QList<int> data;
 
@@ -16,6 +15,7 @@ namespace model
             explicit EventSensor(QString name,quint32 id); //sensore importato dal json
             void simulate() override;
             const QList<int>& getData() const;
+            virtual void accept(SensorVisitorInterface& visitor);
         };
     }
 }

@@ -6,6 +6,7 @@
 // View
 #include "view/SensorCardWidget.h"
 #include "SensorControlWidget.h"
+#include "SensorVisitor.h"
 //Librerie
 #include "lib/QtAwesome/QtAwesome.h"
 // Model
@@ -28,15 +29,18 @@ namespace view
             //View
             //SensorCardWidget *card; // Riutilizzo la card che avevo fatto per mostrare nome e id del sensore
             SensorControlWidget *control;
-            QObject *graph; // Dato che uno dei sensori è rappresentato da una QProgressBar, il genitore in comune con gli altri grafici è QObject
+            QWidget *graph;
 
             //Lib/Model
-            DB *repo;
             QtAwesome* awesome;
             AbstractSensor* selectedSensor; //! Alla creazione dell'inspector sarà null, forse avrebbe più senso prenderlo ogni volta dalla repo
+            SensorVisitor visitor;
         public:
-            explicit SensorInspectorWidget(QtAwesome* qta, DB* database, QWidget* parent=0);
-            void setSensor(const quint32& sensor);
+            explicit SensorInspectorWidget(QtAwesome* qta, QWidget* parent=0);
+            void setSensor(AbstractSensor* sensor);
+        private slots:
+            void simulateSensor();
+            void generateGraph();
         };
     }
 }

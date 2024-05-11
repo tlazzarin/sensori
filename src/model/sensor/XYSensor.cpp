@@ -18,5 +18,8 @@ namespace model{
         }
         const QList<float>& XYSensor::getX() const { return x; }
         const QList<float>& XYSensor::getY() const { return y; }
+        void XYSensor::accept(SensorVisitorInterface& visitor){
+            visitor.visitXYSensor(this);
+        }
     }
 }

@@ -3,6 +3,7 @@
 #include <QString>
 #include <QtTypes>
 #include <QRandomGenerator>
+#include "SensorVisitorInterface.h"
 namespace model
 {
     namespace sensor
@@ -22,6 +23,7 @@ namespace model
             void setName(const QString& name);
             virtual ~AbstractSensor() = default;
             virtual void simulate() = 0;
+            virtual void accept(SensorVisitorInterface& visitor)=0;
         };
     }
 }

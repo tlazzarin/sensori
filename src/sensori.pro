@@ -13,6 +13,7 @@ HEADERS += \
         model/sensor/QuantitySensor.h \
         model/sensor/EventSensor.h \
         model/sensor/XYSensor.h \
+        model/sensor/SensorVisitorInterface.h \
         model/database/DB.h \
         view/MainWindow.h \
         view/NewSensorWizard.h \
@@ -21,6 +22,7 @@ HEADERS += \
         view/SensorsListWidget.h \
         view/sensorViewer/SensorInspectorWidget.h \
         view/sensorViewer/SensorControlWidget.h \
+        view/sensorViewer/SensorVisitor.h \
 
 SOURCES += \
         main.cpp \
@@ -36,6 +38,7 @@ SOURCES += \
         view/SensorsListWidget.cpp \
         view/sensorViewer/SensorInspectorWidget.cpp \
         view/sensorViewer/SensorControlWidget.cpp \
+        view/sensorViewer/SensorVisitor.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree

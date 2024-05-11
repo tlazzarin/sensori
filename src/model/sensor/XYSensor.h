@@ -15,6 +15,7 @@ namespace model{
                 void simulate() override;
                 const QList<float>& getX() const;
                 const QList<float>& getY() const;
+                virtual void accept(SensorVisitorInterface& visitor);
         };
     }
 }

@@ -25,12 +25,12 @@ namespace view{
         browser=new BrowserWidget(awesome, repo, this);
         browser->setMinimumWidth(300);
         splitter->addWidget(browser);
-        inspector=new SensorInspectorWidget(awesome, repo,this);
+        inspector=new SensorInspectorWidget(awesome, this);
         splitter->addWidget(inspector);
         //!CONNECTS
         connect(close, &QAction::triggered, this, &MainWindow::close); //chiude l'applicazione
         connect(newSensor, &QAction::triggered, wizard, &NewSensorWizard::createNewSensor);
-        connect(wizard, NewSensorWizard::newSensorDataReady, this, &MainWindow::createNewSensor);
+        connect(wizard, &NewSensorWizard::newSensorDataReady, this, &MainWindow::createNewSensor);
         connect(browser, &BrowserWidget::sensorSelectedChangedToMain, this, &MainWindow::sensorSelectedChanged);
     }
 
@@ -51,9 +51,11 @@ namespace view{
         }
         browser->setSelectedSensorId(repo->getLastSensorId());
         browser->refreshList();
+        inspector->setSensor(repo->get(repo->getLastSensorId()));
     }
 
     void MainWindow::sensorSelectedChanged(){
         qDebug()<<"Hai cliccato "<<browser->getSelectedSensorId();
+        inspector->setSensor(repo->get(browser->getSelectedSensorId()));
     }
 }

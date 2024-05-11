@@ -14,5 +14,8 @@ namespace model
                 val=0;
             this->val = val;
         }
+        void QuantitySensor::accept(SensorVisitorInterface& visitor){
+            visitor.visitQuantitySensor(this);
+        }
     }
 }

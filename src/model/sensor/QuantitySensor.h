@@ -16,6 +16,7 @@ namespace model
                 void simulate() override;
                 const int& getVal() const;
                 void setVal(int val);
+                virtual void accept(SensorVisitorInterface& visitor);
         };
     }
 }

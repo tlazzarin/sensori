@@ -10,5 +10,8 @@ namespace model{
                 data[i] = QRandomGenerator::global()->bounded(0, 11);
         }
         const QList<int>& EventSensor::getData() const { return data; }
+        void EventSensor::accept(SensorVisitorInterface& visitor){
+            visitor.visitEventSensor(this);
+        }
     }
 }
