@@ -7,7 +7,7 @@ namespace model{
         EventSensor::EventSensor(QString name,unsigned int id) : AbstractSensor(name,id), data{0,0,0,0,0,0,0} {}
         void EventSensor::simulate() {
             for (int i = 0; i < 7; i++)
-                data[i] = rand()%11;
+                data[i] = rand()%15;
         }
         const QList<int>& EventSensor::getData() const { return data; }
         void EventSensor::accept(SensorVisitorInterface& visitor){

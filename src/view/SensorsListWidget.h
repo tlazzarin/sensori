@@ -23,8 +23,8 @@ namespace view{
         public:
             explicit SensorsListWidget(DB* db,QWidget* parent=0);
             void generateView(const QString& query); //Ogni volta che l'utente cambia un carattere nella ricerca o carica un json ricreo la view
-            const unsigned int getSelectedSensorId() const;
-            void setSelectedSensorId(const unsigned int selected);
+            unsigned int getSelectedSensorId() const;
+            void setSelectedSensorId(unsigned int selected);
         private:
             void generateView();
         signals:

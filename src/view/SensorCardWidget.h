@@ -18,7 +18,7 @@ namespace view{
             void mousePressEvent(QMouseEvent* event);
         public:
             explicit SensorCardWidget(AbstractSensor* sens, bool selected, QWidget* parent=0);
-            const unsigned int getId() const;
+            unsigned int getId() const;
         signals:
             void clicked();
     };

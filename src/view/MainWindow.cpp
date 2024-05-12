@@ -1,7 +1,7 @@
 #include "MainWindow.h"
 #include <QAction>
 #include <QMenu>
-#include <QMenubar>
+#include <QMenuBar>
 namespace view{
     MainWindow::MainWindow(QtAwesome* qta, DB* mainRepo, QWidget* parent): QMainWindow(parent), awesome(qta), repo(mainRepo){
         setWindowIcon(awesome->icon("fa-solid fa-chart-area"));
@@ -52,11 +52,11 @@ namespace view{
         browser->setSelectedSensorId(repo->getLastSensorId());
         browser->refreshList();
         inspector->setSensor(repo->get(repo->getLastSensorId()));
+        inspector->generateGraph();
     }
 
     void MainWindow::sensorSelectedChanged(){
         qDebug()<<"Hai cliccato "<<browser->getSelectedSensorId();
         inspector->setSensor(repo->get(browser->getSelectedSensorId()));
-        inspector->generateGraph();
     }
 }

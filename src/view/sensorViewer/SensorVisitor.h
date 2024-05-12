@@ -3,6 +3,13 @@
 //Qt
 #include <QWidget>
 #include <QProgressBar>
+#include <QBarSet>
+#include <QStringList>
+#include <QChart>
+#include <QChartView>
+#include <QBarSeries>
+#include <QBarCategoryAxis>
+#include <QValueAxis>
 //Model
 #include "model/sensor/SensorVisitorInterface.h"
 #include "model/sensor/QuantitySensor.h"

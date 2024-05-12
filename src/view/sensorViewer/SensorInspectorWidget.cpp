@@ -1,7 +1,7 @@
 #include "view/sensorViewer/SensorInspectorWidget.h"
 namespace view{
     namespace sensorViewer{
-        SensorInspectorWidget::SensorInspectorWidget(QtAwesome* qta, QWidget* parent) : QWidget(parent), awesome(qta){
+        SensorInspectorWidget::SensorInspectorWidget(QtAwesome* qta, QWidget* parent) : QWidget(parent), graph(nullptr), awesome(qta), selectedSensor(nullptr){
             layout=new QVBoxLayout(this);
             layout->setAlignment(Qt::AlignTop);
             //TODO: aggiungere sensor card
@@ -17,7 +17,10 @@ namespace view{
         }
 
         void SensorInspectorWidget::generateGraph(){
-            layout->removeWidget(graph);
+            if(graph!=nullptr){
+                layout->removeWidget(graph);
+                delete graph;
+            }
             selectedSensor->accept(visitor);
             graph=visitor.getWidget();
             graph->setParent(this);
@@ -26,7 +29,7 @@ namespace view{
 
         void SensorInspectorWidget::setSensor(AbstractSensor* as){
             selectedSensor=as;
-            //generateGraph();
+            generateGraph();
         }
     }
 }

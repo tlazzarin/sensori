@@ -8,7 +8,7 @@ namespace model
         {
             sensors.append(new_sensor);
         }
-        void DB::remove(const unsigned int key)
+        void DB::remove(unsigned int key)
         {
             AbstractSensor *sensor;
             for (int i = 0; i < sensors.size(); i++)
@@ -22,7 +22,7 @@ namespace model
                 }
             }
         }
-        AbstractSensor* DB::get(const unsigned int key) const{
+        AbstractSensor* DB::get(unsigned int key) const{
             for (int i = 0; i < sensors.size(); i++)
             {
                 if (sensors.at(i)->getId() == key)

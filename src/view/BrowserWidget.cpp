@@ -24,10 +24,10 @@ namespace view{
         sensorsList->generateView(searchBox->text());
     }
 
-    const unsigned int BrowserWidget::getSelectedSensorId() const{
+    unsigned int BrowserWidget::getSelectedSensorId() const{
         return sensorsList->getSelectedSensorId();
     }
-    void BrowserWidget::setSelectedSensorId(const unsigned int selected){
+    void BrowserWidget::setSelectedSensorId(unsigned int selected){
         sensorsList->setSelectedSensorId(selected);
     }
 

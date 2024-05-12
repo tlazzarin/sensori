@@ -2,10 +2,8 @@ TEMPLATE = app
 TARGET = Sensori
 INCLUDEPATH += .
 #Qt
-QT+= core widgets
-CONFIG += c++17
-CONFIG += debug
-CONFIG += console
+QT+= core widgets charts
+CONFIG += c++17 debug console
 
 # Input
 HEADERS += \
