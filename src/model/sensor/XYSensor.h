@@ -1,6 +1,7 @@
 #ifndef MODEL_SENSOR_XYSENSOR_H
 #define MODEL_SENSOR_XYSENSOR_H
 #include <QList>
+#include "algorithm"
 #include "AbstractSensor.h"
 
 namespace model{

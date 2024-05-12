@@ -10,6 +10,7 @@
 #include <QBarSeries>
 #include <QBarCategoryAxis>
 #include <QValueAxis>
+#include <QLineSeries>
 //Model
 #include "model/sensor/SensorVisitorInterface.h"
 #include "model/sensor/QuantitySensor.h"

@@ -6,7 +6,7 @@ namespace view{
     MainWindow::MainWindow(QtAwesome* qta, DB* mainRepo, QWidget* parent): QMainWindow(parent), awesome(qta), repo(mainRepo){
         setWindowIcon(awesome->icon("fa-solid fa-chart-area"));
         wizard = new NewSensorWizard(awesome);
-        setMinimumSize(900,600);
+        setMinimumSize(1280,800);
         //* Inizializzazione menù a tendina
         QAction* newSensor = new QAction(awesome->icon("fa-solid fa-plus"), "Add New Sensor");
         QAction* importSensors = new QAction(awesome->icon("fa-solid fa-file-arrow-down"), "Import Sensors");

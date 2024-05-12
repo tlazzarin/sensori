@@ -10,10 +10,11 @@ namespace model{
             x.squeeze();
             y.clear();
             y.squeeze();
-            int iterations = rand()%(21-5+1); //Upper bound-lower bound +1
-            for (int i = 0; i < iterations; i++){
-                x.append(rand()%21);
-                y.append((double)rand());
+            int iterations = 11; //Upper bound-lower bound +1
+            for (int i = 0; i < iterations; ++i){
+                x.append(rand()%11);
+                std::sort(x.begin(), x.end());
+                y.append(rand()%101);
             }
         }
         const QList<float>& XYSensor::getX() const { return x; }
