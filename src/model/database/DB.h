@@ -14,6 +14,7 @@ namespace model{
                 void remove(unsigned int key); //cancellazione deep del sensore
                 AbstractSensor* get(unsigned int key) const; //se non lo trova ritorna nullptr, non ritorna un const AbstractSensor& perché dovrà farci le simulazioni che vanno a modificare l'oggetto
                 unsigned int getLastSensorId() const;
+                unsigned int getFirstSensorId() const;
         };
     }
 }

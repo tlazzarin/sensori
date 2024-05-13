@@ -2,6 +2,7 @@
 
 namespace view{
     BrowserWidget::BrowserWidget(QtAwesome* qta, DB* mainRepo, QWidget* parent): QWidget(parent),awesome(qta), repo(mainRepo){
+        setMaximumWidth(700);
         layout=new QVBoxLayout(this);
         setLayout(layout);
         //SearchBox

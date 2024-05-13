@@ -48,7 +48,15 @@ namespace model
         }
 
         unsigned int DB::getLastSensorId() const{
-            return sensors.last()->getId();
+            if(sensors.size()>= 1)
+                return sensors.last()->getId();
+            else return 0;
+        }
+
+        unsigned int DB::getFirstSensorId() const{
+            if(sensors.size()>= 1)
+                return sensors.first()->getId();
+            else return 0;
         }
     }
 }

@@ -3,6 +3,7 @@
 // Qt
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QLabel>
 // View
 #include "view/SensorCardWidget.h"
 #include "SensorControlWidget.h"
@@ -30,12 +31,15 @@ namespace view
             // SensorCardWidget *card; // Riutilizzo la card che avevo fatto per mostrare nome e id del sensore
             SensorControlWidget *control;
             QWidget *graph;
+            QLabel *welcomeText;
 
             // Lib/Model
             QtAwesome *awesome;
             AbstractSensor *selectedSensor; //! Alla creazione dell'inspector sarà null, forse avrebbe più senso prenderlo ogni volta dalla repo
             SensorVisitor visitor;
 
+            void hideSensor();
+            void showWelcomeText(bool status);
         public:
             explicit SensorInspectorWidget(QtAwesome *qta, QWidget *parent = 0);
             void setSensor(AbstractSensor *sensor);
@@ -44,7 +48,10 @@ namespace view
 
         public slots:
             void generateGraph();
+        signals:
+            void deleteButtonPressed();
         };
+
     }
 }
 #endif

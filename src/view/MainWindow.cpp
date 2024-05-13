@@ -32,6 +32,7 @@ namespace view{
         connect(newSensor, &QAction::triggered, wizard, &NewSensorWizard::createNewSensor);
         connect(wizard, &NewSensorWizard::newSensorDataReady, this, &MainWindow::createNewSensor);
         connect(browser, &BrowserWidget::sensorSelectedChangedToMain, this, &MainWindow::sensorSelectedChanged);
+        connect(inspector, &SensorInspectorWidget::deleteButtonPressed, this, &MainWindow::selectedSensorDeleted);
     }
 
     void MainWindow::createNewSensor(){
@@ -58,5 +59,12 @@ namespace view{
     void MainWindow::sensorSelectedChanged(){
         qDebug()<<"Hai cliccato "<<browser->getSelectedSensorId();
         inspector->setSensor(repo->get(browser->getSelectedSensorId()));
+    }
+
+    void MainWindow::selectedSensorDeleted(){
+        qDebug()<<"Hai cliccato il tasto delete";
+        repo->remove(browser->getSelectedSensorId());
+        inspector->setSensor(repo->get(repo->getFirstSensorId()));
+        browser->setSelectedSensorId(repo->getFirstSensorId());
     }
 }
