@@ -15,7 +15,7 @@ namespace view{
                 //Qt/View
                 QHBoxLayout* layout;
                 QPushButton* simulateButton;
-                QPushButton* editButton;
+                QPushButton* renameButton;
                 QPushButton* deleteButton;
                 //Lib/Model
                 QtAwesome* awesome;
@@ -23,7 +23,7 @@ namespace view{
                 explicit SensorControlWidget(QtAwesome* qta,QWidget* parent=0);
             signals:
                 void simulateButtonPressed();
-                void editButtonPressed();
+                void renameButtonPressed();
                 void deleteButtonPressed();
         };
     }

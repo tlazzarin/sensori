@@ -21,6 +21,7 @@ HEADERS += \
         view/sensorViewer/SensorInspectorWidget.h \
         view/sensorViewer/SensorControlWidget.h \
         view/sensorViewer/SensorVisitor.h \
+        view/sensorViewer/SensorRenameWidget.h \
 
 SOURCES += \
         main.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
         view/sensorViewer/SensorInspectorWidget.cpp \
         view/sensorViewer/SensorControlWidget.cpp \
         view/sensorViewer/SensorVisitor.cpp \
+        view/sensorViewer/SensorRenameWidget.cpp \
 
 #Fontawesome Icons
 CONFIG+=fontAwesomeFree

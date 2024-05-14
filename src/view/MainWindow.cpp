@@ -33,6 +33,7 @@ namespace view{
         connect(wizard, &NewSensorWizard::newSensorDataReady, this, &MainWindow::createNewSensor);
         connect(browser, &BrowserWidget::sensorSelectedChangedToMain, this, &MainWindow::sensorSelectedChanged);
         connect(inspector, &SensorInspectorWidget::deleteButtonPressed, this, &MainWindow::selectedSensorDeleted);
+        connect(inspector, &SensorInspectorWidget::renameConfirmed, this, &MainWindow::sensorRenamedFromInspector);
     }
 
     void MainWindow::createNewSensor(){
@@ -57,14 +58,18 @@ namespace view{
     }
 
     void MainWindow::sensorSelectedChanged(){
-        qDebug()<<"Hai cliccato "<<browser->getSelectedSensorId();
         inspector->setSensor(repo->get(browser->getSelectedSensorId()));
     }
 
     void MainWindow::selectedSensorDeleted(){
-        qDebug()<<"Hai cliccato il tasto delete";
         repo->remove(browser->getSelectedSensorId());
         inspector->setSensor(repo->get(repo->getFirstSensorId()));
         browser->setSelectedSensorId(repo->getFirstSensorId());
+    }
+
+    void MainWindow::sensorRenamedFromInspector(){
+        if(repo->get(browser->getSelectedSensorId())!=nullptr) 
+            repo->get(browser->getSelectedSensorId())->setName(inspector->getSensorNewName());
+        browser->refreshList();
     }
 }

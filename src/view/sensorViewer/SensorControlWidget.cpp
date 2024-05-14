@@ -6,15 +6,15 @@ namespace view{
             simulateButton=new QPushButton(awesome->icon("fa-solid fa-play"),"Simulate",this);
             simulateButton->setMinimumHeight(50);
             layout->addWidget(simulateButton);
-            editButton=new QPushButton(awesome->icon("fa-solid fa-pen-to-square"),"Edit",this);
-            editButton->setMinimumHeight(50);
-            layout->addWidget(editButton);
+            renameButton=new QPushButton(awesome->icon("fa-solid fa-pen-to-square"),"Rename",this);
+            renameButton->setMinimumHeight(50);
+            layout->addWidget(renameButton);
             deleteButton=new QPushButton(awesome->icon("fa-solid fa-trash"),"Delete",this);
             deleteButton->setMinimumHeight(50);
             layout->addWidget(deleteButton);
             //! CONNECT
             connect(simulateButton, &QPushButton::clicked, this, &SensorControlWidget::simulateButtonPressed);
-            connect(editButton, &QPushButton::clicked, this, &SensorControlWidget::editButtonPressed);
+            connect(renameButton, &QPushButton::clicked, this, &SensorControlWidget::renameButtonPressed);
             connect(deleteButton, &QPushButton::clicked, this, &SensorControlWidget::deleteButtonPressed);
         }
     }

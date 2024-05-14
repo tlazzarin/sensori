@@ -37,6 +37,7 @@ namespace view{
             void createNewSensor(); //Il wizard userà questo slot per dire che i dati del nuovo sensore sono pronti per essere inseriti nel db.
             void sensorSelectedChanged();
             void selectedSensorDeleted();
+            void sensorRenamedFromInspector();
     };
 }
 

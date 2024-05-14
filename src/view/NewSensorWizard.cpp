@@ -15,6 +15,7 @@ namespace view
         layout->addWidget(title);
         newSensorName = new QLineEdit(this);
         newSensorName->setPlaceholderText("Sensor name");
+        newSensorName->setMaxLength(30);
         layout->addWidget(newSensorName);
         sensorTypesButtonsList = QList<QRadioButton *>();
         sensorTypesButtonsList.append(new QRadioButton("Quantity sensor (0-100 gauge)", this));

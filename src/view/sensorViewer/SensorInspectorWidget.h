@@ -8,6 +8,7 @@
 #include "view/SensorCardWidget.h"
 #include "SensorControlWidget.h"
 #include "SensorVisitor.h"
+#include "SensorRenameWidget.h"
 // Librerie
 #include "lib/QtAwesome/QtAwesome.h"
 // Model
@@ -28,11 +29,10 @@ namespace view
             // Qt
             QVBoxLayout *layout;
             // View
-            // SensorCardWidget *card; // Riutilizzo la card che avevo fatto per mostrare nome e id del sensore
             SensorControlWidget *control;
             QWidget *graph;
             QLabel *welcomeText;
-
+            SensorRenameWidget* renameWidget;
             // Lib/Model
             QtAwesome *awesome;
             AbstractSensor *selectedSensor; //! Alla creazione dell'inspector sarà null, forse avrebbe più senso prenderlo ogni volta dalla repo
@@ -43,6 +43,7 @@ namespace view
         public:
             explicit SensorInspectorWidget(QtAwesome *qta, QWidget *parent = 0);
             void setSensor(AbstractSensor *sensor);
+            QString getSensorNewName() const;
         private slots:
             void simulateSensor();
 
@@ -50,6 +51,7 @@ namespace view
             void generateGraph();
         signals:
             void deleteButtonPressed();
+            void renameConfirmed();
         };
 
     }

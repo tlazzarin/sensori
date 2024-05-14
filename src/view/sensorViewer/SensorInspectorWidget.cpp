@@ -15,9 +15,13 @@ namespace view{
             welcomeText->setText("<h1>Welcome!</h1>\nTo get started go to File->Add New Sensor or import a sensor setup!");
             layout->addWidget(welcomeText);
             showWelcomeText(true);
+            //RenameWidget
+            renameWidget=new SensorRenameWidget(awesome);
             //! CONNECT
             connect(control, &SensorControlWidget::simulateButtonPressed, this, &SensorInspectorWidget::simulateSensor);
+            connect(control, &SensorControlWidget::renameButtonPressed, renameWidget, &SensorRenameWidget::renameSensor);
             connect(control, &SensorControlWidget::deleteButtonPressed, this, &SensorInspectorWidget::deleteButtonPressed);
+            connect(renameWidget, &SensorRenameWidget::newSensorNameReady, this, &SensorInspectorWidget::renameConfirmed);
         }
 
         void SensorInspectorWidget::simulateSensor(){
@@ -51,6 +55,10 @@ namespace view{
 
         void SensorInspectorWidget::showWelcomeText(bool status){
             welcomeText->setVisible(status);
+        }
+
+        QString SensorInspectorWidget::getSensorNewName() const{
+            return renameWidget->getText();
         }
     }
 }
