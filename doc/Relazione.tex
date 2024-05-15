@@ -21,29 +21,31 @@
 \section{Introduzione}
 \subsection{Sintesi del programma}
 Sensori è un programma scritto in C++ e implementa il framework Qt per presentare le informazioni all'utente attraverso un'interfaccia grafica. Il suo compito è gestire, simulare, importare ed esportare sensori.
-Il programma ne mette a disposizione tre tipi: quelli che rilevano un valore e la sua variazione nel tempo, quelli che rilevano una quantità e quelli che rilevano un evento.
+Il programma ne mette a disposizione tre tipi: quelli che rilevano un valore e la sua variazione nel tempo, quelli che rilevano una quantità e quelli che rilevano gli eventi.
 Questa scelta è stata fatta in modo tale da utilizzare vari tipi di grafici: 
 \begin{itemize}
     \item Un grafico lineare per rappresentare i valori nel tempo;
     \item Un grafico a barre che rappresenta il numero di occorrenze di un evento in un periodo;
-    \item Una barra del progresso che rappresenta una percentuale.
+    \item Una barra del progresso che rappresenta un solo valore rispetto ad un limite.
 \end{itemize}
+L'interfaccia è composta da due componenti principali, il \textbf{browser} che ha il compito di rappresentare tutti i sensori attualmente disponibili e l'\textbf{inspector} che si occupa della gestione e della simulazione del sensore selezionato.
 Questo progetto offre il supporto persistenza dei dati tramite l'uso di un formato strutturato chiamato JSON.
-\subsection{Funzioni implementate}
-Per la gestione di un singolo sensore:
+\section{Descrizione del modello}
+\subsection{Polimorfismo}
+\subsection{Persistenza dei dati}
+\section{Funzionalità implementate (DA FINIRE PRENDENDO COME ESEMPIO QUELLA DEL MODELLO DI RELAZIONE)}
+Per la gestione di un singolo sensore ho implementato le seguenti funzionalità:
 \begin{itemize}
     \item Creazione;
-    \item Modifica;
+    \item Rinominazione;
     \item Simulazione;
     \item Cancellazione.
 \end{itemize}
 Per la gestione dell'insieme di sensori:
 \begin{itemize}
     \item Barra di ricerca per filtrare i sensori attraverso il nome o l'ID;
-    \item Importazione ed esportazione di un intero insieme di sensori attraverso un file JSON;
-    \item Ordinamento secondo la data di aggiunta o l'ordine alfabetico;
+    \item Importazione ed esportazione di un intero insieme di sensori attraverso un file JSON.
 \end{itemize}
-\clearpage
-\section{Implementazione}
+\section{Rendicontazione ore}
 
 \end{document}
