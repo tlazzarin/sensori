@@ -3,7 +3,7 @@ TARGET = Sensori
 INCLUDEPATH += .
 #Qt
 QT+= core widgets charts
-CONFIG += c++17 debug console
+CONFIG += c++17
 
 # Input
 HEADERS += \
