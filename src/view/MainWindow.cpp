@@ -27,6 +27,11 @@ namespace view{
         splitter->addWidget(browser);
         inspector=new SensorInspectorWidget(awesome, this);
         splitter->addWidget(inspector);
+        //*Export error
+        exportError=new QMessageBox(this);
+        exportError->setWindowTitle("Warning");
+        exportError->setText("You must have at least one sensor");
+        exportError->setIcon(QMessageBox::Warning);
         //!CONNECTS
         connect(close, &QAction::triggered, this, &MainWindow::close); //chiude l'applicazione
         connect(newSensor, &QAction::triggered, wizard, &NewSensorWizard::createNewSensor);
@@ -34,6 +39,7 @@ namespace view{
         connect(browser, &BrowserWidget::sensorSelectedChangedToMain, this, &MainWindow::sensorSelectedChanged);
         connect(inspector, &SensorInspectorWidget::deleteButtonPressed, this, &MainWindow::selectedSensorDeleted);
         connect(inspector, &SensorInspectorWidget::renameConfirmed, this, &MainWindow::sensorRenamedFromInspector);
+        connect(exportSensors, &QAction::triggered, this, &MainWindow::exportButtonClicked);
     }
 
     void MainWindow::createNewSensor(){
@@ -71,5 +77,15 @@ namespace view{
         if(repo->get(browser->getSelectedSensorId())!=nullptr) 
             repo->get(browser->getSelectedSensorId())->setName(inspector->getSensorNewName());
         browser->refreshList();
+    }
+
+    void MainWindow::exportButtonClicked(){
+        if(repo->getFirstSensorId()!=0){
+            QString path = QFileDialog::getSaveFileName(this, tr("Export sensors"), "./sensors.json", tr("Json files (*.json)"));
+            repo->saveToFile(path);
+        }else{
+            exportError->exec();
+        }
+        
     }
 }

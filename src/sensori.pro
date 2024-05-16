@@ -13,6 +13,7 @@ HEADERS += \
         model/sensor/XYSensor.h \
         model/sensor/SensorVisitorInterface.h \
         model/database/DB.h \
+        model/json/JsonVisitor.h \
         view/MainWindow.h \
         view/NewSensorWizard.h \
         view/BrowserWidget.h \
@@ -30,6 +31,7 @@ SOURCES += \
         model/sensor/EventSensor.cpp \
         model/sensor/XYSensor.cpp \
         model/database/DB.cpp \
+        model/json/JsonVisitor.cpp \
         view/MainWindow.cpp \
         view/NewSensorWizard.cpp \
         view/BrowserWidget.cpp \

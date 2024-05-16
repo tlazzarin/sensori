@@ -1,4 +1,5 @@
 #include "DB.h"
+#include <QDebug>
 using namespace model::sensor;
 namespace model
 {
@@ -57,6 +58,21 @@ namespace model
             if(sensors.size()>= 1)
                 return sensors.first()->getId();
             else return 0;
+        }
+
+        void DB::saveToFile(const QString& path){
+            qDebug()<<"Path: "<<path;
+            QJsonArray mainArray;
+            for(auto sensor:sensors){
+                sensor->accept(visitor);
+                mainArray.push_back(*(visitor.getSensorObj()));
+                qDebug()<<visitor.getSensorObj()[0];
+            }
+            QJsonDocument document(mainArray);
+            QFile file(path);
+            file.open(QIODevice::WriteOnly);
+            file.write(document.toJson());
+            file.close();
         }
     }
 }

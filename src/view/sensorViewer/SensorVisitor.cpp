@@ -10,7 +10,6 @@ namespace view::sensorViewer
 
     void SensorVisitor::visitQuantitySensor(QuantitySensor *qs)
     {
-        //TODO: Creare un QWidget testo e Progress bar per rendere un po' più carino il tutto
         QProgressBar *bar = new QProgressBar();
         bar->setRange(0, 1000);
         bar->setFormat("%v/%m");
