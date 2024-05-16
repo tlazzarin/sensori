@@ -34,16 +34,17 @@ namespace view
         NewSensorWizard *wizard;
         BrowserWidget *browser;
         SensorInspectorWidget *inspector;
-        QMessageBox* exportError;
 
     public:
         explicit MainWindow(QtAwesome *qta, DB *mainRepo, QWidget *parent = 0);
+        void closeEvent(QCloseEvent *event);
     public slots:
         void createNewSensor(); // Il wizard userà questo slot per dire che i dati del nuovo sensore sono pronti per essere inseriti nel db.
         void sensorSelectedChanged();
         void selectedSensorDeleted();
         void sensorRenamedFromInspector();
         void exportButtonClicked();
+        void importButtonClicked();
     };
 }
 

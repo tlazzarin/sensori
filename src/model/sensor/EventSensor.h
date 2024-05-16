@@ -12,7 +12,7 @@ namespace model
 
         public:
             explicit EventSensor(QString name); //sensore nuovo
-            explicit EventSensor(QString name,unsigned int id); //sensore importato dal json
+            explicit EventSensor(QString name,unsigned int id, const QList<int>& existingData); //sensore importato dal json
             void simulate() override;
             const QList<int>& getData() const;
             virtual void accept(SensorVisitorInterface& visitor);

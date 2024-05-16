@@ -13,6 +13,7 @@ namespace model{
             private:
                 QList<AbstractSensor*> sensors;
                 JsonVisitor visitor;
+                void clearList();
             public:
                 QList<AbstractSensor*> search(const QString& query) const;
                 void insert(AbstractSensor* new_sensor);
@@ -21,6 +22,7 @@ namespace model{
                 unsigned int getLastSensorId() const;
                 unsigned int getFirstSensorId() const;
                 void saveToFile(const QString& path);
+                bool loadFromFile(const QString& path);
         };
     }
 }

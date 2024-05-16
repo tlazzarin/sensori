@@ -9,13 +9,13 @@ namespace model
         class QuantitySensor : public AbstractSensor
         {
             private:
-                int val;//[1,100]
+                unsigned int val;//[1,100]
             public:
                 explicit QuantitySensor(QString name); //per creazione da zero
-                explicit QuantitySensor(QString name,unsigned int id); //per import da json
+                explicit QuantitySensor(QString name,unsigned int id, unsigned int value=0); //per import da json
                 void simulate() override;
-                const int& getVal() const;
-                void setVal(int val);
+                const unsigned int& getVal() const;
+                void setVal(unsigned int newVal);
                 virtual void accept(SensorVisitorInterface& visitor);
         };
     }

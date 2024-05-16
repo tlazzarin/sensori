@@ -8,14 +8,14 @@ namespace model{
     namespace sensor{
         class XYSensor : public AbstractSensor{
             private:
-                QList<float> x;
-                QList<float> y;
+                QList<int> x;
+                QList<int> y;
             public:
                 explicit XYSensor(QString name); //sensore nuovo
-                explicit XYSensor(QString name,unsigned int id); //sensore importato dal json
+                explicit XYSensor(QString name,unsigned int id, const QList<int>& xdata, const QList<int>& ydata); //sensore importato dal json
                 void simulate() override;
-                const QList<float>& getX() const;
-                const QList<float>& getY() const;
+                const QList<int>& getX() const;
+                const QList<int>& getY() const;
                 virtual void accept(SensorVisitorInterface& visitor);
         };
     }

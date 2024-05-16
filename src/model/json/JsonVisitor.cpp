@@ -39,16 +39,16 @@ namespace model::json
         mainObj->insert("id", (int)xys->getId());
         mainObj->insert("name", xys->getName());
         mainObj->insert("type", "XYSensor");
-        QJsonArray vals;
+        QJsonArray valsX;
         for(auto val:xys->getX()){
-            vals.append(val);
+            valsX.append(val);
         }
-        mainObj->insert("x", vals);
-        vals.empty();
+        mainObj->insert("x", valsX);
+        QJsonArray valsY;
         for(auto val:xys->getY()){
-            vals.append(val);
+            valsY.append(val);
         }
-        mainObj->insert("y", vals);
+        mainObj->insert("y", valsY);
         sensorObj=mainObj;
     }
 }

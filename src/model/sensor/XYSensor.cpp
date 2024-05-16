@@ -4,7 +4,7 @@ namespace model{
         //sensore nuovo
         XYSensor::XYSensor(QString name) : AbstractSensor(name){}
         //sensore importato dal json
-        XYSensor::XYSensor(QString name,unsigned int id) : AbstractSensor(name,id){}
+        XYSensor::XYSensor(QString name,unsigned int id, const QList<int>& xdata, const QList<int>& ydata) : AbstractSensor(name,id), x(xdata), y(ydata){}
         void XYSensor::simulate() {
             x.clear();
             x.squeeze();
@@ -17,8 +17,8 @@ namespace model{
                 y.append(rand()%101);
             }
         }
-        const QList<float>& XYSensor::getX() const { return x; }
-        const QList<float>& XYSensor::getY() const { return y; }
+        const QList<int>& XYSensor::getX() const { return x; }
+        const QList<int>& XYSensor::getY() const { return y; }
         void XYSensor::accept(SensorVisitorInterface& visitor){
             visitor.visitXYSensor(this);
         }
