@@ -1,7 +1,7 @@
 #include "NewSensorWizard.h"
 namespace view
 {
-    NewSensorWizard::NewSensorWizard(QtAwesome *fa) : awesome(fa)
+    NewSensorWizard::NewSensorWizard(QtAwesome *fa, QWidget* parent) : QWidget(parent), awesome(fa)
     {
         //Se chiudo la main window mentre questa finestra è aperta, viene chiusa anche questa: https://stackoverflow.com/questions/16468584/qwidget-doesnt-close-when-main-window-is-closed
         setAttribute(Qt::WA_QuitOnClose, false);

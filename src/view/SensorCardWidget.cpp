@@ -1,24 +1,28 @@
 #include "view/SensorCardWidget.h"
 #include <QFrame>
 namespace view{
-    SensorCardWidget::SensorCardWidget(AbstractSensor* sens, bool selected,QWidget* parent): QWidget(parent), id(sens->getId()){
+        SensorCardWidget::SensorCardWidget(AbstractSensor* sens, bool selected,QWidget* parent): QWidget(parent), id(sens->getId()){
         layout=new QHBoxLayout(this);
         setLayout(layout);
-        QLabel* idLabel=new QLabel("ID:"+QString::number(sens->getId()));
+        layout->setAlignment(Qt::AlignLeft);
+        QLabel* idLabel=new QLabel("ID: "+QString::number(sens->getId()));
+        idLabel->setFixedWidth(60);
         name=new QLabel("Name: "+sens->getName());
         layout->addWidget(idLabel);
         layout->addWidget(name);
+        QPalette pal;
+        setAutoFillBackground(true);
         if(selected)
-            setStyleSheet("background-color: #e7e7e7; color: red;");
+            pal.setColor(QPalette::Window, QColor(205,205,205));
         else
-            setStyleSheet("background-color: #e7e7e7;");
-        setFixedHeight(80);
+            pal.setColor(QPalette::Window, QColor(225,225,225));
+        setPalette(pal);
     }
     unsigned int SensorCardWidget::getId() const{
         return id;
     }
 
-    void SensorCardWidget::mousePressEvent(QMouseEvent* event){
+    void SensorCardWidget::mouseReleaseEvent(QMouseEvent* event){
         emit clicked();
     }
 }

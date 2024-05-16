@@ -20,6 +20,7 @@ namespace view
         menu->addAction(exportSensors);
         //* Inizializzazione MainWidget
         splitter = new QSplitter();
+        splitter->setChildrenCollapsible(false);
         setCentralWidget(splitter);
         browser = new BrowserWidget(awesome, repo, this);
         browser->setMinimumWidth(300);

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPalette>
 //Model
 #include "model/sensor/AbstractSensor.h"
 using namespace model::sensor;
@@ -15,7 +16,7 @@ namespace view{
             unsigned int id;
             QLabel* name;
         protected:
-            void mousePressEvent(QMouseEvent* event);
+            void mouseReleaseEvent(QMouseEvent* event);
         public:
             explicit SensorCardWidget(AbstractSensor* sens, bool selected, QWidget* parent=0);
             unsigned int getId() const;

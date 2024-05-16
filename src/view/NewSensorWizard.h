@@ -30,7 +30,7 @@ namespace view
         void clean();
 
     public:
-        explicit NewSensorWizard(QtAwesome *fa);
+        explicit NewSensorWizard(QtAwesome *fa, QWidget* parent=nullptr);
         QString getNewSensorName();
         int getNewSensorType();
     signals:
