@@ -6,7 +6,7 @@ namespace view{
         setLayout(layout);
         layout->setAlignment(Qt::AlignLeft);
         QLabel* idLabel=new QLabel("ID: "+QString::number(sens->getId()));
-        idLabel->setFixedWidth(60);
+        idLabel->setFixedWidth(80);
         name=new QLabel("Name: "+sens->getName());
         layout->addWidget(idLabel);
         layout->addWidget(name);
