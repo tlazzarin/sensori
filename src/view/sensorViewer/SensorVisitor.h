@@ -11,6 +11,8 @@
 #include <QBarCategoryAxis>
 #include <QValueAxis>
 #include <QLineSeries>
+#include <QLabel>
+#include <QVBoxLayout>
 //Model
 #include "model/sensor/SensorVisitorInterface.h"
 #include "model/sensor/QuantitySensor.h"

@@ -12,8 +12,7 @@ namespace model{
             y.squeeze();
             int iterations = 11; //Upper bound-lower bound +1
             for (int i = 0; i < iterations; ++i){
-                x.append(rand()%11);
-                std::sort(x.begin(), x.end());
+                x.append(i);
                 y.append(rand()%101);
             }
         }

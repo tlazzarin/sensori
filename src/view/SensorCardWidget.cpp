@@ -22,7 +22,7 @@ namespace view{
         return id;
     }
 
-    void SensorCardWidget::mouseReleaseEvent(QMouseEvent* event){
+    void SensorCardWidget::mouseReleaseEvent(QMouseEvent*){
         emit clicked();
     }
 }

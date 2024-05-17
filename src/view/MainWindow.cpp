@@ -76,6 +76,7 @@ namespace view
         if (repo->get(browser->getSelectedSensorId()) != nullptr)
             repo->get(browser->getSelectedSensorId())->setName(inspector->getSensorNewName());
         browser->refreshList();
+        inspector->setSensor(repo->get(browser->getSelectedSensorId()));
     }
 
     void MainWindow::exportButtonClicked()

@@ -1,5 +1,4 @@
 #include "SensorVisitor.h"
-#include <QLabel>
 namespace view::sensorViewer
 {
 
@@ -10,19 +9,27 @@ namespace view::sensorViewer
 
     void SensorVisitor::visitQuantitySensor(QuantitySensor *qs)
     {
+        QWidget *w = new QWidget();
+        QVBoxLayout *layout = new QVBoxLayout();
+        layout->setAlignment(Qt::AlignTop | Qt::AlignVCenter);
+        w->setLayout(layout);
+        QLabel *title = new QLabel(w);
+        title->setText("["+QString::fromStdString(std::to_string(qs->getId()))+"] "+qs->getName()+" | Quantity sensor, it shows the current value of a sensor.");
+        layout->addWidget(title);
         QProgressBar *bar = new QProgressBar();
         bar->setRange(0, 1000);
         bar->setFormat("%v/%m");
         bar->setValue(qs->getVal());
         bar->setMinimumHeight(80);
         bar->setStyleSheet("QProgressBar { border: 2px solid grey; border-radius: 0px; text-align: center; } QProgressBar::chunk {background-color: #36dddd; width: 1px;}");
-        widget = bar;
+        layout->addWidget(bar);
+        widget = w;
     }
 
     void SensorVisitor::visitEventSensor(EventSensor *es)
     {
         QChart *chart = new QChart();
-        chart->setTitle("Event sensor, it shows how many times an event has taken place each day");
+        chart->setTitle("["+QString::fromStdString(std::to_string(es->getId()))+"] "+es->getName()+" | Event sensor, it shows how many times an event has taken place each day.");
         // Definizione asse x
         QStringList days{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
         auto axisX = new QBarCategoryAxis();
@@ -47,7 +54,7 @@ namespace view::sensorViewer
     void SensorVisitor::visitXYSensor(XYSensor *xys)
     {
         QChart *chart=new QChart();
-        chart->setTitle("XY Sensor with 10 samples | x in [0,10], y in [0,100]");
+        chart->setTitle("["+QString::fromStdString(std::to_string(xys->getId()))+"] "+xys->getName()+" | XY Sensor with 10 samples (x in [0,10], y in [0,100]).");
         chart->legend()->hide();
         //Asse X
         auto axisX = new QValueAxis();
@@ -63,7 +70,7 @@ namespace view::sensorViewer
         auto series = new QLineSeries;
         auto xVals = xys->getX();
         auto yVals = xys->getY();
-        for(int i=0; i<xVals.size(); ++i) series->append(i, yVals[i]);
+        for(int i=0; i<xVals.size(); ++i) series->append(xVals[i], yVals[i]);
         chart->addSeries(series);
         series->attachAxis(axisX);
         series->attachAxis(axisY);
