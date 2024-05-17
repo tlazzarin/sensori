@@ -14,7 +14,7 @@ namespace model::json
         mainObj->insert("name", es->getName());
         mainObj->insert("type", "EventSensor");
         QJsonArray vals;
-        for(auto val:es->getData()){
+        for(auto val:es->getX()){
             vals.append(val);
         }
         mainObj->insert("values",vals);

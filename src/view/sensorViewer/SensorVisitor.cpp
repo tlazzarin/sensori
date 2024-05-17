@@ -41,7 +41,7 @@ namespace view::sensorViewer
         chart->addAxis(axisY, Qt::AlignLeft);
         // Definizione dati
         auto barSet = new QBarSet("Events");
-        for (auto item : es->getData()) *barSet << item;
+        for (auto item : es->getX()) *barSet << item;
         auto series = new QBarSeries();
         series->append(barSet);
         chart->addSeries(series);
