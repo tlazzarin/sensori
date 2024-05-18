@@ -5,6 +5,7 @@
 #include <QSplitter>
 #include <QHBoxLayout>
 #include <QFileDialog>
+#include <QShortcut>
 // Librerie
 #include "lib/QtAwesome/QtAwesome.h"
 // Model

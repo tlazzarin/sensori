@@ -27,6 +27,10 @@ namespace view
         splitter->addWidget(browser);
         inspector = new SensorInspectorWidget(awesome, this);
         splitter->addWidget(inspector);
+        //*Shortcuts
+        QShortcut *newSensorShortcut = new QShortcut(QKeySequence(tr("n")),this);
+        QShortcut *importShortcut = new QShortcut(QKeySequence(tr("i")),this);
+        QShortcut *exportShortcut = new QShortcut(QKeySequence(tr("e")),this);
         //! CONNECTS
         connect(newSensor, &QAction::triggered, wizard, &NewSensorWizard::createNewSensor);
         connect(wizard, &NewSensorWizard::newSensorDataReady, this, &MainWindow::createNewSensor);
@@ -35,6 +39,9 @@ namespace view
         connect(inspector, &SensorInspectorWidget::renameConfirmed, this, &MainWindow::sensorRenamedFromInspector);
         connect(exportSensors, &QAction::triggered, this, &MainWindow::exportButtonClicked);
         connect(importSensors, &QAction::triggered, this, &MainWindow::importButtonClicked);
+        connect(newSensorShortcut, &QShortcut::activated, wizard, &NewSensorWizard::createNewSensor);
+        connect(importShortcut, &QShortcut::activated, this, &MainWindow::importButtonClicked);
+        connect(exportShortcut, &QShortcut::activated, this, &MainWindow::exportButtonClicked);
     }
 
     void MainWindow::createNewSensor()
@@ -84,6 +91,7 @@ namespace view
         if (repo->getFirstSensorId() != 0)
         {
             QString path = QFileDialog::getSaveFileName(this, tr("Export sensors"), "./sensors.json", tr("Json files (*.json)"));
+            if(path==nullptr) return;
             repo->saveToFile(path);
         }
         else
@@ -100,6 +108,7 @@ namespace view
                 return;
         }
         QString path = QFileDialog::getOpenFileName(this, tr("Import sensors"), "./", tr("Json files (*.json)"));
+        if(path==nullptr) return;
         if (repo->loadFromFile(path))
         {
             inspector->setSensor(repo->get(repo->getFirstSensorId()));
