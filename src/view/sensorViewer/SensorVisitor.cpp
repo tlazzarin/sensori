@@ -11,10 +11,10 @@ namespace view::sensorViewer
     {
         QWidget *w = new QWidget();
         QVBoxLayout *layout = new QVBoxLayout();
-        layout->setAlignment(Qt::AlignTop | Qt::AlignVCenter);
         w->setLayout(layout);
         QLabel *title = new QLabel(w);
         title->setText("["+QString::fromStdString(std::to_string(qs->getId()))+"] "+qs->getName()+" | Quantity sensor, it shows the current value of a sensor.");
+        title->setAlignment(Qt::AlignCenter | Qt::AlignTop);
         layout->addWidget(title);
         QProgressBar *bar = new QProgressBar();
         bar->setRange(0, 1000);

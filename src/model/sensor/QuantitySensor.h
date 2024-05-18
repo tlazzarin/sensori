@@ -15,7 +15,6 @@ namespace model
                 explicit QuantitySensor(QString name,unsigned int id, unsigned int value=0); //per import da json
                 void simulate() override;
                 const unsigned int& getVal() const;
-                void setVal(unsigned int newVal);
                 virtual void accept(SensorVisitorInterface& visitor);
         };
     }

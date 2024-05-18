@@ -12,6 +12,5 @@ namespace model
         void QuantitySensor::accept(SensorVisitorInterface& visitor){
             visitor.visitQuantitySensor(this);
         }
-        void QuantitySensor::setVal(unsigned int newVal){val=newVal;}
     }
 }
