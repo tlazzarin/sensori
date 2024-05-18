@@ -10,9 +10,9 @@ namespace view
         wizard = new NewSensorWizard(awesome);
         setMinimumSize(1280, 800);
         //* Inizializzazione menù a tendina
-        QAction *newSensor = new QAction(awesome->icon("fa-solid fa-plus"), "Add New Sensor");
-        QAction *importSensors = new QAction(awesome->icon("fa-solid fa-file-arrow-down"), "Import Sensors");
-        QAction *exportSensors = new QAction(awesome->icon("fa-solid fa-file-arrow-up"), "Export Sensors");
+        QAction *newSensor = new QAction(awesome->icon("fa-solid fa-plus"), "(N) Add New Sensor");
+        QAction *importSensors = new QAction(awesome->icon("fa-solid fa-file-arrow-down"), "(I) Import Sensors");
+        QAction *exportSensors = new QAction(awesome->icon("fa-solid fa-file-arrow-up"), "(E) Export Sensors");
         QMenu *menu = menuBar()->addMenu("File");
         menu->addAction(newSensor);
         menu->addSeparator();
