@@ -105,7 +105,8 @@ namespace model
                     obj.value("id").toInt() != 0)
                 {
                     //*EventSensor parsing
-                    if (obj.value("type") == "EventSensor")
+                    //Devo controllare anche che ci siano esattamente 7 valori
+                    if (obj.value("type") == "EventSensor" && obj.value("values").toArray().size()==7)
                     {
                         QList<int> data;
                         for (auto val : obj.value("values").toArray())
@@ -115,6 +116,7 @@ namespace model
                                                        data));
                     }
                     //*QuantitySensor parsing
+                    //Non ho bisogno di fare il controllo perché obj.value("value").toInt() ritorna come default 0
                     else if (obj.value("type") == "QuantitySensor")
                     {
                         newList.append(new QuantitySensor(obj.value("name").toString(),
@@ -124,7 +126,8 @@ namespace model
                     //*XYSensor parsing
                     // Prima di proseguire controllo se x e y hanno lo stesso numero di valori
                     else if (obj.value("type") == "XYSensor" &&
-                             obj.value("x").toArray().size() == obj.value("y").toArray().size())
+                             obj.value("x").toArray().size() == 11 &&
+                             obj.value("y").toArray().size() == 11)
                     {
                         QList<int> x, y;
                         for (auto val : obj.value("x").toArray())
