@@ -38,8 +38,7 @@
     {
         "id": 26213,
         "name": "Bilancia 2",
-        "type": "QuantitySensor",
-        "value": 549
+        "type": "QuantitySensor"
     },
     {
         "id": 5998,
