@@ -32,4 +32,4 @@ Relazione
 + Adeguata
 
 Suggerimenti non collegati alla valutazione
-Nessuno.
+- Nessuno
