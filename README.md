@@ -1,5 +1,5 @@
 # Progetto del corso di programmazione a oggetti A.A. 23/24
-[![CodeFactor](https://www.codefactor.io/repository/github/tommasolazzarin/sensori/badge)](https://www.codefactor.io/repository/github/tommasolazzarin/sensori)
+[![CodeFactor](https://www.codefactor.io/repository/github/tlazzarin/sensori/badge)](https://www.codefactor.io/repository/github/tlazzarin/sensori)
 ### Valutazione
 | Aumento voto: 1 punto
 
